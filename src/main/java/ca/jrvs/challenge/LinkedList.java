@@ -1,87 +1,54 @@
 package ca.jrvs.challenge;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
+import java.util.Collection;
+import java.util.Iterator;
 
 public class LinkedList<T> {
 
-  private LinkedList next = null;
-  private LinkedList[] head = {this};
-  private T val;
+  private Link<T> head;
 
-  public LinkedList(T val) {
-    this.val = val;
+  public LinkedList(T val){
+    Link<T> link = new Link(val);
+    this.setHead(link);
   }
 
-  public LinkedList(T val, LinkedList[] head) {
-    this.head = head;
-    this.val = val;
+  public LinkedList(Collection<T> collection){
+    Iterator<T> iterator = collection.iterator();
+    if (iterator.hasNext()){
+      this.setHead(new Link(iterator.next()));
+    }
+    Link<T> currentLink = this.getHead();
+    while (iterator.hasNext()){
+      currentLink.setNext(new Link(iterator.next()));
+      currentLink = currentLink.getNext();
+    }
+  }
+  public T get(int index) {
+    Link link = this.getLink(index);
+    return (T) link.getVal();
   }
 
-  protected LinkedList[] getHeadPtr() {
+  public Link<T> getHead() {
     return head;
   }
 
-  protected void setHeadPtr(LinkedList[] ptr) {
-    this.head = ptr;
-  }
-
-  protected void copyHeadPtr(LinkedList link) {
-    this.setHeadPtr(link.getHeadPtr());
-  }
-
-  public LinkedList getHead() {
-    return head[0];
-  }
-
-  protected void setHead(LinkedList head) {
-    this.head[0] = head;
-  }
-
-  public LinkedList getNext() {
-    return next;
-  }
-
-  public void setNext(LinkedList next) {
-    next.copyHeadPtr(this);
-    this.next = next;
-  }
-
-  public Boolean hasNext() {
-    return this.next != null;
-  }
-
-  public T getVal() {
-    return this.val;
-  }
-
-
-
-  public T get(int idx) {
-    int index = idx;
-    LinkedList link = this;
-    if (idx < 0) {
-      throw new IndexOutOfBoundsException();
+  public void deleteAtIndex(int index){
+    if (index == 0){
+      this.setHead(this.getHead().getNext());
     }
-    while (index > 0){
-      if (!link.hasNext()){
-        throw new IndexOutOfBoundsException();
-      }
-      link = link.getNext();
-      index--;
-    }
-    return (T) link.getVal();
+    Link link = this.getLink(index);
   }
 
 
   public void addAtHead(T val) {
-    LinkedList newLink = new LinkedList(val);
-    newLink.setNext(this);
-    newLink.setHead(newLink);
+    Link newLink = new Link(val);
+    newLink.setNext(this.getHead());
+    this.setHead(newLink);
   }
 
   public void addAtTail(T val) {
-    LinkedList newLink = new LinkedList(val);
-    LinkedList current = this;
+    Link newLink = new Link(val);
+    Link current = this.getHead();
     while (current.hasNext()) {
       current = current.getNext();
     }
@@ -89,19 +56,19 @@ public class LinkedList<T> {
   }
 
   public void addAtIndex(T val, int index) {
-    LinkedList newLink = new LinkedList(val);
+    Link newLink = new Link(val);
     if (index == 0){
-      newLink.setNext(this);
+      newLink.setNext(this.getHead());
     } else {
-      LinkedList link = getLink(index - 1);
+      Link link = getLink(index - 1);
+      newLink.setNext(link.getNext());
+      link.setNext(newLink);
     }
-
-
   }
 
-  private LinkedList getLink(int index){
+  private Link getLink(int index){
     int idx = index;
-    LinkedList link = this;
+    Link link = this.getHead();
     if (idx < 0) {
       throw new IndexOutOfBoundsException();
     }
@@ -117,6 +84,37 @@ public class LinkedList<T> {
       idx--;
     }
     return link;
+  }
+
+  public void setHead(Link<T> head) {
+    this.head = head;
+  }
+
+  public class Link<T> {
+    private Link next = null;
+    private T val;
+
+    public Link(T val) {
+      this.val = val;
+    }
+
+
+    public Link getNext() {
+      return next;
+    }
+
+    public void setNext(Link next) {
+      this.next = next;
+    }
+
+    public Boolean hasNext() {
+      return this.next != null;
+    }
+
+    public T getVal() {
+      return this.val;
+    }
+
   }
 
 }
