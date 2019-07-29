@@ -1,4 +1,4 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency5;
 
 public class LargestAndSmallestInteger {
   public static int[] LargeAndSmall(int[] nums){

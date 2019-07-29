@@ -1,4 +1,4 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency5;
 
 import java.util.HashMap;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
  *
  * You may assume that each input would have exactly one solution, and you may not use the same element twice.
  */
-public class twoSum {
+public class TwoSum {
   public static int[] twoSum(int[] nums, int target){
     HashMap<Integer, Integer> map = new HashMap<>();
     for (int i = 0; i < nums.length ; i++){

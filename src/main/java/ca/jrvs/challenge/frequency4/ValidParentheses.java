@@ -1,4 +1,4 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency4;
 
 import java.util.Stack;
 /**
@@ -10,7 +10,7 @@ import java.util.Stack;
  * Open brackets must be closed by the same type of brackets. Open brackets must be closed in the
  * correct order. Note that an empty string is also considered valid.
  */
-public class validParenthesis {
+public class ValidParentheses {
   public static boolean validParenthesis(String s) {
     Stack<Character> stack = new Stack<Character>();
     for (char c : s.toCharArray()) {

@@ -1,4 +1,4 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency5;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -2,9 +2,8 @@ package ca.jrvs.challenge;
 
 import static org.junit.Assert.*;
 
+import ca.jrvs.challenge.frequency5.FindDuplicateCharacters;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 import org.junit.Test;
 
 public class FindDuplicateCharactersTest {

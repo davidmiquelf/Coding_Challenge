@@ -2,6 +2,7 @@ package ca.jrvs.challenge;
 
 import static org.junit.Assert.*;
 
+import ca.jrvs.challenge.frequency5.FindDuplicateNumber;
 import org.junit.Test;
 
 public class FindDuplicateNumberTest {

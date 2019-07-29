@@ -1,10 +1,10 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency5;
 
 
 /**
  * Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
  */
-public class isPalindrome {
+public class ValidPalindrome {
 
   public static boolean isPalindrome(String s) {
     String p = s.replaceAll("[^A-Za-z0-9]", "");

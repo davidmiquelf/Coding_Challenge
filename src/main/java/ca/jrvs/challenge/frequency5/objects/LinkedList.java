@@ -1,12 +1,21 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency5.objects;
 
+import ca.jrvs.challenge.frequency5.objects.Link;
 import java.util.Collection;
 import java.util.Iterator;
 
+/**
+ * Linked list implementation. Generic.
+ * @param <T> type of linked list values.
+ */
 @SuppressWarnings({"unused", "WeakerAccess"})
 public class LinkedList<T> {
 
   private Link<T> head;
+
+  public LinkedList(){
+    this.setHead(null);
+  }
 
   public LinkedList(T val){
     Link<T> link = new Link<>(val);
@@ -45,9 +54,16 @@ public class LinkedList<T> {
     if (index == 0){
       this.setHead(this.getHead().getNext());
     }
-    Link<T> link = this.getLink(index);
-  }
+    Link<T> link = this.getLink(index - 1 );
+    if ( !link.hasNext() ){
+      throw new IndexOutOfBoundsException();
+    } else if (link.getNext().getNext() == null){
+      link.setNext(null);
+    } else {
+      link.setNext(link.getNext().getNext());
+    }
 
+  }
 
   public void addAtHead(T val) {
     Link<T> newLink = new Link<>(val);
@@ -58,6 +74,10 @@ public class LinkedList<T> {
   public void addAtTail(T val) {
     Link<T> newLink = new Link<>(val);
     Link<T> current = this.getHead();
+    if (current == null){
+      this.setHead(newLink);
+      return;
+    }
     while (current.hasNext()) {
       current = current.getNext();
     }
@@ -68,6 +88,7 @@ public class LinkedList<T> {
     Link<T> newLink = new Link<>(val);
     if (index == 0){
       newLink.setNext(this.getHead());
+      this.setHead(newLink);
     } else {
       Link<T> link = getLink(index - 1);
       if (link != null){
@@ -99,33 +120,5 @@ public class LinkedList<T> {
     return link;
   }
 
-
-
-  public class Link<T> {
-    private Link<T> next = null;
-    private T val;
-
-    public Link(T val) {
-      this.val = val;
-    }
-
-
-    public Link<T> getNext() {
-      return next;
-    }
-
-    public void setNext(Link<T> next) {
-      this.next = next;
-    }
-
-    public Boolean hasNext() {
-      return this.next != null;
-    }
-
-    public T getVal() {
-      return this.val;
-    }
-
-  }
 
 }

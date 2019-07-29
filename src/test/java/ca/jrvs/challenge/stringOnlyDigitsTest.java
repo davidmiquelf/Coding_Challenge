@@ -2,6 +2,7 @@ package ca.jrvs.challenge;
 
 import static org.junit.Assert.*;
 
+import ca.jrvs.challenge.frequency5.stringOnlyDigits;
 import org.junit.Test;
 
 public class stringOnlyDigitsTest {

@@ -1,8 +1,8 @@
-package ca.jrvs.challenge;
+package ca.jrvs.challenge.frequency5;
 
 import java.util.Arrays;
 
-public class isAnagram {
+public class ValidAnagram {
 
   public static boolean isAnagram(String s, String t){
     char[] as = s.toCharArray();
