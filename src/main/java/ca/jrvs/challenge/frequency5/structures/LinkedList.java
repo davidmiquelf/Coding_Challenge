@@ -1,11 +1,10 @@
-package ca.jrvs.challenge.frequency5.objects;
+package ca.jrvs.challenge.frequency5.structures;
 
-import ca.jrvs.challenge.frequency5.objects.Link;
 import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * Linked list implementation. Generic.
+ * Linked list implementation. Wrapper on a generic Link object.
  * @param <T> type of linked list values.
  */
 @SuppressWarnings({"unused", "WeakerAccess"})

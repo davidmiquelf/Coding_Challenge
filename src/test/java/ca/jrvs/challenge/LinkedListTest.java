@@ -2,7 +2,7 @@ package ca.jrvs.challenge;
 
 import static org.junit.Assert.assertEquals;
 
-import ca.jrvs.challenge.frequency5.objects.LinkedList;
+import ca.jrvs.challenge.frequency5.structures.LinkedList;
 import org.junit.Test;
 
 public class LinkedListTest {

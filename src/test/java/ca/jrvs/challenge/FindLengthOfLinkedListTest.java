@@ -1,7 +1,7 @@
 package ca.jrvs.challenge;
 
 import ca.jrvs.challenge.frequency5.FindLengthOfLinkedList;
-import ca.jrvs.challenge.frequency5.objects.LinkedList;
+import ca.jrvs.challenge.frequency5.structures.LinkedList;
 import org.junit.Test;
 
 public class FindLengthOfLinkedListTest {

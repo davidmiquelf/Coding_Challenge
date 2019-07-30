@@ -2,7 +2,7 @@ package ca.jrvs.challenge.frequency4;
 
 import static org.junit.Assert.*;
 
-import ca.jrvs.challenge.frequency5.objects.LinkedList;
+import ca.jrvs.challenge.frequency5.structures.LinkedList;
 import org.junit.Test;
 
 public class ReverseLinkedListTest {

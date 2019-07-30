@@ -1,6 +1,6 @@
 package ca.jrvs.challenge.frequency5;
 
-import ca.jrvs.challenge.frequency5.objects.BST;
+import ca.jrvs.challenge.frequency5.structures.BST;
 import java.util.ArrayList;
 import java.util.List;
 

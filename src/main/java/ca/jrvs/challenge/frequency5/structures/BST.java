@@ -1,4 +1,4 @@
-package ca.jrvs.challenge.frequency5.objects;
+package ca.jrvs.challenge.frequency5.structures;
 
 /**
  * Really just a wrapper on BST<T> so that root can be remembered easily.

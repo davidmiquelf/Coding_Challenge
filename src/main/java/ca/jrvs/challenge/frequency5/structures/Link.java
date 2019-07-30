@@ -1,4 +1,4 @@
-package ca.jrvs.challenge.frequency5.objects;
+package ca.jrvs.challenge.frequency5.structures;
 
 public class Link<T> {
   private Link<T> next = null;

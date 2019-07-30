@@ -1,7 +1,7 @@
 package ca.jrvs.challenge.frequency4;
 
-import ca.jrvs.challenge.frequency5.objects.Link;
-import ca.jrvs.challenge.frequency5.objects.LinkedList;
+import ca.jrvs.challenge.frequency5.structures.Link;
+import ca.jrvs.challenge.frequency5.structures.LinkedList;
 
 public class ReverseLinkedList {
 
